@@ -26,6 +26,13 @@ body {
   overflow: hidden;
   padding-top: 65px;
 }
+h1 {
+  color: #fff;
+  opacity: 0.88;
+  font-family: monospace;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
 
 form {
   position: relative;
@@ -163,6 +170,11 @@ sup {
     flex-direction: row-reverse;
     justify-content: space-around;
     gap: 8px;
+    border: none;
+    padding: 0;
+  }
+  h1 {
+    display: none;
   }
   .calc {
     height: 90%;
@@ -184,20 +196,11 @@ sup {
   }
 }
 
-@media (min-width: 601px) {
+@media (pointer: fine) {
   .digit:hover,
   .decimal:hover,
   .operator:hover,
   .parenthesis:hover {
-    background-color: #141414;
-  }
-}
-
-@media (max-width: 600px) {
-  .digit:active,
-  .decimal:active,
-  .operator:active,
-  .parenthesis:active {
     background-color: #141414;
   }
 }

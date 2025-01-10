@@ -2,6 +2,8 @@ let input = "";
 let formInput = document.forms[0].elements.operation;
 let displayResult = document.querySelector("form span");
 
+// Touch buttons
+
 const digits = document.querySelectorAll(
   ".digit, .parenthesis, .plus, .minus, .decimal"
 );
@@ -135,6 +137,8 @@ document.addEventListener("keyup", (e) => {
   }
 });
 
+// Calculate functionality
+
 function checkEmptyParentheses() {
   if (input.includes("()")) {
     input = input.replace("()", "");
@@ -170,4 +174,22 @@ function handleError() {
     formInput.style.color = "white";
     formInput.value = input;
   }
+}
+
+// Touchscreen button effect
+const mobileEffect = document.querySelectorAll(
+  ".digit, .decimal, .operator, .parenthesis"
+);
+
+if (matchMedia("(pointer:coarse)").matches) {
+  mobileEffect.forEach((button) => {
+    let currentColor = button.style.backgroundColor;
+    button.style.transition = "all 0.1s";
+    button.addEventListener("touchstart", () => {
+      button.style.backgroundColor = "#3b3b3b";
+    });
+    button.addEventListener("touchend", () => {
+      button.style.backgroundColor = currentColor;
+    });
+  });
 }
