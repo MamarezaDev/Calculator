@@ -1,0 +1,210 @@
+:root {
+  --gray: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #000;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  background-color: #000;
+  border-top: 2px solid var(--gray);
+  border-radius: 40px;
+  overflow: hidden;
+  padding-top: 65px;
+}
+
+form {
+  position: relative;
+}
+
+form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  border-radius: 10px;
+  padding: 32px 0 16px 12px;
+  background-color: var(--gray);
+  color: #fff;
+}
+
+form span {
+  color: #9c9c9c;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+}
+
+.parentheses {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.parentheses button {
+  border-radius: 50%;
+  background-color: var(--gray);
+  width: 9%;
+  padding-bottom: 3.5px;
+  font-size: 1.3rem;
+}
+
+.parentheses button:first-child {
+  padding-right: 2px;
+}
+.parentheses button:last-child {
+  padding-left: 2px;
+}
+
+.calc {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.calc > span {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.6rem;
+  border: none;
+  width: 25%;
+  aspect-ratio: 1/1;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.3s;
+}
+
+.equals {
+  background-color: #0062f5;
+}
+
+.clear {
+  background-color: #430a27;
+}
+
+.operator {
+  background-color: #18191c;
+}
+
+.clearEntry {
+  background-color: #1d1b0f;
+}
+
+.columns,
+.rows {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.columns span {
+  background-color: #e7e7e7;
+  width: 3px;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 10;
+}
+.calc .rows {
+  flex-direction: column;
+}
+
+.rows span {
+  background-color: #e7e7e7;
+  width: 100%;
+  height: 3px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+sup {
+  font-size: 12px;
+  position: relative;
+  bottom: 15%;
+  left: 4%;
+}
+
+@media (max-height: 650px) {
+  .container {
+    width: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    gap: 8px;
+  }
+  .calc {
+    height: 90%;
+    width: 70%;
+  }
+  .parentheses {
+    width: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .parentheses button {
+    width: 30px;
+    height: 30px;
+  }
+  form {
+    width: 100%;
+    margin: auto 0;
+  }
+}
+
+@media (min-width: 601px) {
+  .digit:hover,
+  .decimal:hover,
+  .operator:hover,
+  .parenthesis:hover {
+    background-color: #141414;
+  }
+}
+
+@media (max-width: 600px) {
+  .digit:active,
+  .decimal:active,
+  .operator:active,
+  .parenthesis:active {
+    background-color: #141414;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    border: none;
+    padding: 0 8px;
+  }
+}
