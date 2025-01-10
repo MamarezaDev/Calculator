@@ -115,9 +115,18 @@ button {
 .equals {
   background-color: #0062f5;
 }
+.equals:hover,
+.equals:active {
+  background-color: #0f52b6;
+}
 
 .clear {
   background-color: #430a27;
+}
+
+.clear:hover,
+.clear:active {
+  background-color: #360a21;
 }
 
 .operator {
@@ -126,6 +135,11 @@ button {
 
 .clearEntry {
   background-color: #1d1b0f;
+}
+
+.clearEntry:hover,
+.clearEntry:active {
+  background-color: #222117;
 }
 
 .columns,
@@ -164,6 +178,9 @@ sup {
 }
 
 @media (max-height: 650px) {
+  body {
+    height: 100vh;
+  }
   .container {
     width: 90%;
     display: flex;
@@ -208,6 +225,7 @@ sup {
 @media (max-width: 425px) {
   .container {
     border: none;
+    border-radius: 0;
     padding: 0 8px;
   }
 }
